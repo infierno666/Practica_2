@@ -2,12 +2,15 @@
 export function init_ejercicio10() {
     console.log("Ejercicio 10 listo.");
 
-    const max = 100;
+    const max = $("#campoTexto").attr("maxlength");
 
-    $("#e10_text").off("input").on("input", function () {
-        const restantes = max - $(this).val().length;
-        $("#e10_count").text(`Caracteres restantes: ${restantes}`);
-    });
+    $("#campoTexto")
+        .off("input")
+        .on("input", function () {
+            const usados = $(this).val().length;
+            const restantes = max - usados;
+            $("#contador").text(restantes);
+        });
 
-    $("#e10_count").text(`Caracteres restantes: ${max}`);
+    $("#contador").text(max);
 }

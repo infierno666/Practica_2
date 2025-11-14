@@ -88,6 +88,22 @@
         .hidden {
             display: none;
         }
+
+        .btn-e1 {
+            padding: 8px 10px;
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            transition: 0.2s;
+        }
+
+        .btn-e1:hover {
+            transform: scale(1.05);
+            opacity: .9;
+        }
     </style>
 </head>
 
@@ -262,8 +278,8 @@
 
 
         <!-- SECCIÓN: CATÁLOGO DE EJERCICIOS -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 id="ejercicios"
+        <div id="ejercicios" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2
                 class="text-3xl font-extrabold text-gray-800 mb-8 pt-4 pb-2 border-b-2 border-indigo-200 flex items-center space-x-3">
                 <i class="fas fa-cubes text-indigo-600"></i>
                 <span>Catálogo de Ejercicios jQuery</span>
@@ -432,126 +448,342 @@
         <div id="exercise-views-container">
 
             <!-- EJERCICIO 1: Galería de efectos jQuery -->
-            <div id="ejercicio1" class="exercise-view p-8 rounded-xl shadow-2xl">
-                <div class="max-w-xl mx-auto bg-white p-6 rounded-xl shadow-lg border-t-4 border-indigo-500">
-                    <h2 class="text-2xl font-bold mb-4 text-indigo-700">
-                        1. Galería de efectos jQuery
-                    </h2>
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-3xl font-extrabold text-gray-800 mb-6 border-b-4 border-indigo-500 pb-2">
+                    <i class="fas fa-magic text-indigo-500 mr-2"></i> Ejercicio 01: Galería de Efectos jQuery
+                </h1>
 
-                    <p class="text-gray-600 mb-4">Aplica efectos como fade, slide, hide, show, toggle, etc.</p>
+                <div id="ejercicio1" class="exercise-view p-8 rounded-xl shadow-2xl bg-white">
+                    <div class="max-w-xl mx-auto p-6 rounded-xl shadow-lg border-t-4 border-indigo-500">
 
-                    <div id="e1_gallery" class="grid grid-cols-3 gap-4 mb-4">
-                        <img src="https://via.placeholder.com/150" class="rounded shadow">
-                        <img src="https://via.placeholder.com/150" class="rounded shadow">
-                        <img src="https://via.placeholder.com/150" class="rounded shadow">
+                        <h2 class="text-2xl font-bold mb-4 text-indigo-700">
+                            1. Galería de efectos jQuery
+                        </h2>
+                        <p class="text-gray-600 mb-6">
+                            Aplica efectos a las imágenes individualmente o en secuencia.
+                        </p>
+
+                        <!-- BOTONES SEPARADOS -->
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+
+                            <button id="btn_toggle" class="btn-e1 bg-indigo-500">Toggle</button>
+
+                            <button id="btn_fadeOut" class="btn-e1 bg-pink-500">FadeOut</button>
+                            <button id="btn_fadeIn" class="btn-e1 bg-pink-600">FadeIn</button>
+                            <button id="btn_fadeToggle" class="btn-e1 bg-pink-700">FadeToggle</button>
+
+                            <button id="btn_slideUp" class="btn-e1 bg-yellow-500">SlideUp</button>
+                            <button id="btn_slideDown" class="btn-e1 bg-yellow-600">SlideDown</button>
+                            <button id="btn_slideToggle" class="btn-e1 bg-yellow-700">SlideToggle</button>
+
+                            <button id="btn_opacity_low" class="btn-e1 bg-amber-500">Opacidad 0.5</button>
+                            <button id="btn_opacity_full" class="btn-e1 bg-amber-600">Opacidad 1</button>
+
+                            <button id="btn_full_sequence" class="col-span-2 btn-e1 bg-gray-800">Secuencia
+                                Completa</button>
+                            <button id="btn_reset" class="col-span-2 btn-e1 bg-gray-500">Resetear</button>
+
+                        </div>
+
+                        <!-- GALERÍA -->
+                        <div id="e1_gallery" class="grid grid-cols-3 gap-4">
+                            <img src="https://i.pinimg.com/222x/91/e9/64/91e964fa1b945fe4a0aeedad839ebf6a.jpg"
+                                class="rounded-xl shadow gallery-item">
+                            <img src="https://www.tuexpertoapps.com/wp-content/uploads/2019/05/megacaballero.png.webp"
+                                class="rounded-xl shadow gallery-item">
+                            <img src="https://tiermaker.com/images/chart/chart/cartas-clash-royale--1166035/gigante-noblepng.png"
+                                class="rounded-xl shadow gallery-item">
+                        </div>
+
+                        <button onclick="hideExercise()"
+                            class="mt-8 w-full text-indigo-600 font-semibold hover:underline">
+                            ← Volver al Menú
+                        </button>
+
                     </div>
-
-                    <button id="e1_run" class="w-full bg-indigo-600 text-white p-3 rounded-lg font-bold">
-                        Ejecutar efectos
-                    </button>
-
-                    <button onclick="hideExercise()" class="mt-6 text-indigo-500 font-semibold w-full">
-                        ← Volver al Menú
-                    </button>
                 </div>
             </div>
 
             <!-- EJERCICIO 2: Ocultar/mostrar listas -->
             <div id="ejercicio2" class="exercise-view p-8 rounded-xl shadow-2xl">
-                <div class="max-w-xl mx-auto bg-white p-6 rounded-xl border-t-4 border-purple-500 shadow-lg">
-                    <h2 class="text-2xl font-bold mb-4 text-purple-700">2. Ocultar y Mostrar Listas</h2>
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-3xl font-extrabold text-gray-800 mb-6 border-b-4 border-purple-500 pb-2">
+                        <i class="fas fa-eye-slash text-purple-500 mr-2"></i> Ejercicio 02: Ocultar / Mostrar Listas
+                    </h1>
 
-                    <ul id="e2_list1" class="list-disc ml-6 mb-4">
-                        <li>Elemento 1</li>
-                        <li>Elemento 2</li>
-                        <li>Elemento 3</li>
-                    </ul>
+                    <!-- Controles de Visibilidad -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg mb-8">
+                        <h2 class="text-xl font-semibold mb-4 text-gray-700">Controles</h2>
+                        <div class="flex flex-wrap gap-4">
 
-                    <ul id="e2_list2" class="list-disc ml-6 mb-4">
-                        <li>A</li>
-                        <li>B</li>
-                        <li>C</li>
-                    </ul>
+                            <!-- Botón Ocultar -->
+                            <button id="hide-btn"
+                                class="flex-1 min-w-0 md:flex-initial px-6 py-3 bg-red-600 text-white font-bold rounded-lg shadow-md hover:bg-red-700 transition duration-150 transform hover:scale-[1.02]">
+                                <i class="fas fa-eye-slash mr-2"></i> Ocultar Todos los Items
+                            </button>
 
-                    <div class="flex gap-4">
-                        <button id="e2_hide" class="flex-1 bg-purple-600 text-white p-2 rounded">Ocultar</button>
-                        <button id="e2_show" class="flex-1 bg-purple-700 text-white p-2 rounded">Mostrar</button>
+                            <!-- Botón Mostrar -->
+                            <button id="show-btn"
+                                class="flex-1 min-w-0 md:flex-initial px-6 py-3 bg-green-600 text-white font-bold rounded-lg shadow-md hover:bg-green-700 transition duration-150 transform hover:scale-[1.02]">
+                                <i class="fas fa-eye mr-2"></i> Mostrar Todos los Items
+                            </button>
+
+                        </div>
                     </div>
 
-                    <button onclick="hideExercise()" class="mt-6 text-purple-500 font-semibold w-full">← Volver al
-                        Menú</button>
+                    <!-- Contenedor de Listas -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                        <!-- Lista 1 -->
+                        <div class="list-container bg-white p-6 rounded-xl shadow-xl border-t-4 border-indigo-400">
+                            <h3 class="text-2xl font-bold text-indigo-700 mb-4">Lista de Frutas</h3>
+                            <ul id="lista1" class="space-y-2 target-list">
+                                <li
+                                    class="p-2 border-l-4 border-indigo-400 bg-indigo-50 text-gray-800 rounded-md flex items-center">
+                                    <i class="fas fa-apple-alt text-indigo-500 mr-3"></i> Manzana
+                                </li>
+                                <li
+                                    class="p-2 border-l-4 border-indigo-400 bg-indigo-50 text-gray-800 rounded-md flex items-center">
+                                    <i class="fas fa-lemon text-indigo-500 mr-3"></i> Limón
+                                </li>
+                                <li
+                                    class="p-2 border-l-4 border-indigo-400 bg-indigo-50 text-gray-800 rounded-md flex items-center">
+                                    <i class="fas fa-banan-alt text-indigo-500 mr-3"></i> Plátano
+                                </li>
+                                <li
+                                    class="p-2 border-l-4 border-indigo-400 bg-indigo-50 text-gray-800 rounded-md flex items-center">
+                                    <i class="fas fa-grape text-indigo-500 mr-3"></i> Uva
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Lista 2 -->
+                        <div class="list-container bg-white p-6 rounded-xl shadow-xl border-t-4 border-purple-400">
+                            <h3 class="text-2xl font-bold text-purple-700 mb-4">Lista de Verduras</h3>
+                            <ul id="lista2" class="space-y-2 target-list">
+                                <li
+                                    class="p-2 border-l-4 border-purple-400 bg-purple-50 text-gray-800 rounded-md flex items-center">
+                                    <i class="fas fa-carrot text-purple-500 mr-3"></i> Zanahoria
+                                </li>
+                                <li
+                                    class="p-2 border-l-4 border-purple-400 bg-purple-50 text-gray-800 rounded-md flex items-center">
+                                    <i class="fas fa-seedling text-purple-500 mr-3"></i> Lechuga
+                                </li>
+                                <li
+                                    class="p-2 border-l-4 border-purple-400 bg-purple-50 text-gray-800 rounded-md flex items-center">
+                                    <i class="fas fa-pepper-hot text-purple-500 mr-3"></i> Pimiento
+                                </li>
+                                <li
+                                    class="p-2 border-l-4 border-purple-400 bg-purple-50 text-gray-800 rounded-md flex items-center">
+                                    <i class="fas fa-leaf text-purple-500 mr-3"></i> Espinaca
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="flex justify-center mt-6">
+                    <button onclick="hideExercise()"
+                        class="bg-green-500 text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-green-600 hover:scale-105 transition-transform duration-200">
+                        ← Volver al Menú
+                    </button>
                 </div>
             </div>
 
             <!-- EJERCICIO 3: Cambiar estilos al presionar títulos -->
             <div id="ejercicio3" class="exercise-view p-8 rounded-xl shadow-2xl">
-                <div class="max-w-xl mx-auto bg-white p-6 rounded-xl shadow-lg border-t-4 border-pink-500">
-                    <h2 class="text-2xl font-bold mb-4 text-pink-700">3. Cambiar Estilos de Títulos</h2>
+                <div class="max-w-4xl mx-auto container-card p-8 rounded-xl shadow-2xl">
+                    <h1 class="text-3xl font-extrabold text-gray-800 mb-8 border-b-4 border-fuchsia-500 pb-2">
+                        <i class="fas fa-heading text-fuchsia-500 mr-2"></i> Ejercicio 03: Interacción con Títulos
+                    </h1>
 
-                    <h1 id="e3_title1" class="text-xl font-bold mb-3 cursor-pointer">Título 1</h1>
-                    <h1 id="e3_title2" class="text-xl font-bold mb-3 cursor-pointer">Título 2</h1>
+                    <p class="text-gray-600 mb-6">Haz clic en los títulos para aplicar el cambio de color y de fuente
+                        extravagante.</p>
 
-                    <p class="text-gray-600">Haz clic en cada título para cambiar color de texto, fondo y fuente.</p>
+                    <!-- Título 1 -->
+                    <h2 id="titulo1"
+                        class="clickable-title text-2xl md:text-3xl font-bold p-4 mb-6 rounded-lg border-l-8 shadow-md">
+                        Título de Nivel 1: ¡Hazme Clic!
+                    </h2>
 
-                    <button onclick="hideExercise()" class="mt-6 text-pink-500 font-semibold w-full">← Volver al
-                        Menú</button>
+                    <!-- Título 2 -->
+                    <h2 id="titulo2"
+                        class="clickable-title text-2xl md:text-3xl font-bold p-4 mb-6 rounded-lg border-l-8 shadow-md">
+                        Título de Nivel 2: ¡Hazme Clic!
+                    </h2>
+
+                    <!-- Área de control y reset -->
+                    <div id="reset-area"
+                        class="mt-8 pt-4 border-t border-gray-200 flex flex-col items-center space-y-3">
+                        <button id="reset-btn"
+                            class="px-6 py-2 bg-gray-500 text-white font-bold rounded-lg shadow-md hover:bg-gray-600 transition duration-150 transform hover:scale-[1.02]">
+                            <i class="fas fa-sync-alt mr-2"></i> Resetear Estilos
+                        </button>
+                        <p class="text-gray-500 text-xs italic text-center">
+                            Vuelve al estilo visual original.
+                        </p>
+                    </div>
                 </div>
+                <div class="flex justify-center mt-6">
+                    <button onclick="hideExercise()"
+                        class="bg-green-500 text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-green-600 hover:scale-105 transition-transform duration-200">
+                        ← Volver al Menú
+                    </button>
+                </div>
+
             </div>
 
-            <!-- EJERCICIO 4: Hover en hipervínculos -->
-            <div id="ejercicio4" class="exercise-view p-8 rounded-xl shadow-2xl">
-                <div class="max-w-xl mx-auto bg-white p-6 rounded-xl border-t-4 border-red-500 shadow-lg">
-                    <h2 class="text-2xl font-bold mb-4 text-red-700">4. Efecto Hover en Hipervínculos</h2>
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-3xl font-extrabold text-gray-800 mb-6 border-b-4 border-pink-500 pb-2">
+                    <i class="fas fa-mouse-pointer text-pink-500 mr-2"></i> Ejercicio 04: Eventos de Mouse
+                </h1>
 
-                    <div class="space-y-2">
-                        <a href="#" class="block text-blue-600 hover:underline e4_link">Hipervínculo 1</a>
-                        <a href="#" class="block text-blue-600 hover:underline e4_link">Hipervínculo 2</a>
-                        <a href="#" class="block text-blue-600 hover:underline e4_link">Hipervínculo 3</a>
+                <div id="ejercicio4" class="exercise-view p-8 bg-white rounded-2xl shadow-2xl">
+                    <div class="max-w-xl mx-auto p-6 rounded-xl shadow-lg border-t-4 border-pink-500">
+
+                        <h2 class="text-2xl font-bold mb-4 text-pink-700">4. Efecto Hover en Hipervínculos</h2>
+
+                        <p class="text-gray-600 mb-6">
+                            Cuando el mouse pasa sobre un hipervínculo, cambia su fondo con jQuery.
+                        </p>
+
+                        <!-- HIPERVÍNCULOS -->
+                        <div class="space-y-3">
+                            <a href="#" class="block p-3 rounded-lg text-blue-600 font-semibold border e4_link">
+                                Hipervínculo 1
+                            </a>
+
+                            <a href="#" class="block p-3 rounded-lg text-blue-600 font-semibold border e4_link">
+                                Hipervínculo 2
+                            </a>
+
+                            <a href="#" class="block p-3 rounded-lg text-blue-600 font-semibold border e4_link">
+                                Hipervínculo 3
+                            </a>
+                        </div>
+
+                        <button onclick="hideExercise()"
+                            class="mt-8 w-full text-pink-600 font-semibold hover:underline">
+                            ← Volver al Menú
+                        </button>
+
                     </div>
-
-                    <button onclick="hideExercise()" class="mt-6 text-red-500 font-semibold w-full">← Volver al
-                        Menú</button>
                 </div>
             </div>
 
             <!-- EJERCICIO 5: Manipulación de listas -->
-            <div id="ejercicio5" class="exercise-view p-8 rounded-xl shadow-2xl">
-                <div class="max-w-xl mx-auto bg-white p-6 rounded-xl border-t-4 border-orange-500 shadow-lg">
-                    <h2 class="text-2xl font-bold mb-4 text-orange-700">5. Manipular Lista</h2>
+            <div class="max-w-4xl mx-auto px-4 py-8">
 
-                    <ul id="e5_list" class="list-disc ml-6 mb-4">
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
-                        <li>Item 4</li>
-                    </ul>
+                <h1
+                    class="text-3xl font-extrabold text-gray-800 mb-6 border-b-4 border-yellow-500 pb-3 flex items-center gap-3">
+                    <i class="fas fa-list text-yellow-500"></i> Ejercicio 05: Manipulación de Listas con jQuery
+                </h1>
 
-                    <button id="e5_run" class="w-full bg-orange-600 text-white p-3 rounded-lg">Probar Métodos
-                        jQuery</button>
+                <div id="ejercicio5"
+                    class="exercise-view p-8 bg-gradient-to-br from-yellow-50 to-white rounded-2xl shadow-2xl">
 
-                    <button onclick="hideExercise()" class="mt-6 text-orange-500 font-semibold w-full">← Volver al
-                        Menú</button>
+                    <div class="max-w-xl mx-auto p-6 rounded-xl shadow-lg border-t-4 border-yellow-500 bg-white">
+
+                        <h2 class="text-2xl font-bold mb-4 text-yellow-700 flex items-center gap-2">
+                            <i class="fas fa-list-ol"></i> 5. Manipulación de una lista (jQuery)
+                        </h2>
+
+                        <p class="text-gray-600 mb-6">
+                            Manipula dinámicamente los elementos de la lista utilizando métodos jQuery.
+                        </p>
+
+                        <!-- LISTA -->
+                        <ul id="e5_list" class="list-decimal pl-8 space-y-3 text-lg text-gray-700">
+                            <li class="hover:text-yellow-600 transition-colors duration-300">Item 1</li>
+                            <li class="hover:text-yellow-600 transition-colors duration-300">Item 2</li>
+                            <li class="hover:text-yellow-600 transition-colors duration-300">Item 3</li>
+                            <li class="hover:text-yellow-600 transition-colors duration-300">Item 4</li>
+                        </ul>
+
+                        <!-- BOTONES -->
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-8">
+
+                            <button id="btn_add"
+                                class="btn-e5 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 rounded-lg shadow-md flex items-center justify-center gap-2 transition-transform transform hover:scale-105">
+                                <i class="fas fa-plus"></i> Agregar
+                            </button>
+
+                            <button id="btn_remove"
+                                class="btn-e5 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 rounded-lg shadow-md flex items-center justify-center gap-2 transition-transform transform hover:scale-105">
+                                <i class="fas fa-minus"></i> Quitar Último
+                            </button>
+
+                            <button id="btn_color"
+                                class="btn-e5 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-lg shadow-md flex items-center justify-center gap-2 transition-transform transform hover:scale-105">
+                                <i class="fas fa-paint-brush"></i> Cambiar Color
+                            </button>
+
+                            <button id="btn_text"
+                                class="btn-e5 bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 rounded-lg shadow-md flex items-center justify-center gap-2 transition-transform transform hover:scale-105">
+                                <i class="fas fa-edit"></i> Cambiar Textos
+                            </button>
+
+                            <button id="btn_hide"
+                                class="btn-e5 bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 rounded-lg shadow-md flex items-center justify-center gap-2 transition-transform transform hover:scale-105">
+                                <i class="fas fa-eye-slash"></i> Ocultar
+                            </button>
+
+                            <button id="btn_show"
+                                class="btn-e5 bg-gray-700 hover:bg-gray-800 text-white font-semibold py-2 rounded-lg shadow-md flex items-center justify-center gap-2 transition-transform transform hover:scale-105">
+                                <i class="fas fa-eye"></i> Mostrar
+                            </button>
+
+                            <button id="btn_animate"
+                                class="col-span-full btn-e5 bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 rounded-xl shadow-xl flex items-center justify-center gap-3 transition-transform transform hover:scale-105">
+                                <i class="fas fa-magic"></i> Animar Lista
+                            </button>
+
+                        </div>
+
+                        <!-- BOTÓN VOLVER -->
+                        <button onclick="hideExercise()"
+                            class="mt-8 w-full text-yellow-600 font-semibold hover:underline hover:text-yellow-700 transition-colors">
+                            ← Volver al Menú
+                        </button>
+
+                    </div>
                 </div>
             </div>
+
+
 
             <!-- EJERCICIO 6: Resaltar lenguajes OOP -->
             <div id="ejercicio6" class="exercise-view p-8 rounded-xl shadow-2xl">
-                <div class="max-w-xl mx-auto bg-white p-6 rounded-xl border-t-4 border-yellow-500 shadow-lg">
-                    <h2 class="text-2xl font-bold mb-4 text-yellow-700">6. Resaltar Lenguajes OOP</h2>
+                <div class="max-w-xl mx-auto p-6 bg-white rounded-xl shadow-lg mt-8">
 
-                    <ul class="list-disc ml-6 mb-4">
+                    <h2 class="text-2xl font-bold mb-4 text-blue-700">
+                        Lenguajes de Programación
+                    </h2>
+
+                    <ul id="languages" class="list-disc pl-8 space-y-2 text-lg text-gray-700">
                         <li class="oop">Java</li>
-                        <li>HTML</li>
                         <li class="oop">C#</li>
-                        <li>SQL</li>
+                        <li class="oop">Python</li>
+                        <li>JavaScript</li>
+                        <li>C</li>
+                        <li>Go</li>
                     </ul>
 
-                    <button id="e6_apply" class="w-full bg-yellow-600 text-white p-3 rounded-lg">Resaltar</button>
-
-                    <button onclick="hideExercise()" class="mt-6 text-yellow-500 font-semibold w-full">← Volver al
-                        Menú</button>
+                    <button id="highlight_oop"
+                        class="mt-4 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-transform transform hover:scale-105 flex items-center gap-2">
+                        <i class="fas fa-paint-brush"></i> Resaltar OOP
+                    </button>
                 </div>
+                <div class="flex justify-center mt-6">
+                    <button onclick="hideExercise()"
+                        class="bg-green-500 text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-green-600 hover:scale-105 transition-transform duration-200">
+                        ← Volver al Menú
+                    </button>
+                </div>
+
             </div>
+
 
             <!-- EJERCICIO 7: Asociar/Desasociar clase -->
             <div id="ejercicio7" class="exercise-view p-8 rounded-xl shadow-2xl">
@@ -559,10 +791,13 @@
                     <h2 class="text-2xl font-bold mb-4 text-green-700">7. Asociar y Desasociar Clase</h2>
 
                     <div id="e7_container" class="space-y-2">
-                        <p>Texto 1</p>
-                        <p>Texto 2</p>
-                        <p>Texto 3</p>
+                        <p>El Señor de los Anillos es mejor que Harry Potter.</p>
+                        <p>Van entendiendo los años lo que los días ignoran.</p>
+                        <p>Pueden encontrar ignorancia en un libro y una enseñanza de vida en el lugar menos esperado.
+                        </p>
+                        <p>Viva Boooca.</p>
                     </div>
+
 
                     <div class="flex gap-4 mt-4">
                         <button id="e7_add" class="flex-1 bg-green-600 text-white p-3 rounded">Agregar Clase</button>
@@ -574,52 +809,84 @@
                 </div>
             </div>
 
-            <!-- EJERCICIO 8: Crear formulario dinámico -->
-            <div id="ejercicio8" class="exercise-view p-8 rounded-xl shadow-2xl">
-                <div class="max-w-xl mx-auto bg-white p-6 rounded-xl border-t-4 border-teal-500 shadow-lg">
-                    <h2 class="text-2xl font-bold mb-4 text-teal-700">8. Formulario Dinámico</h2>
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-3xl font-extrabold text-gray-800 mb-6 border-b-4 border-teal-500 pb-2">
+                    <i class="fas fa-user-plus text-teal-500 mr-2"></i> Ejercicio 08: Formulario Dinámico
+                </h1>
 
-                    <div class="flex gap-4">
-                        <button id="e8_create" class="flex-1 bg-teal-600 text-white p-3 rounded">Crear
-                            Formulario</button>
-                        <button id="e8_show" class="flex-1 bg-teal-700 text-white p-3 rounded">Mostrar
-                            Elementos</button>
+                <div id="ejercicio8" class="exercise-view p-8 bg-white rounded-2xl shadow-2xl">
+                    <div class="max-w-xl mx-auto p-6 rounded-xl shadow-lg border-t-4 border-teal-500">
+
+                        <h2 class="text-2xl font-bold mb-3 text-teal-700">
+                            8. Crear y Mostrar Formulario
+                        </h2>
+
+                        <p class="text-gray-600 mb-6">
+                            Al presionar el primer botón se crea un formulario dinámico.
+                            Con el segundo, se muestran los elementos HTML generados.
+                        </p>
+
+                        <!-- BOTONES -->
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <button id="e8_create"
+                                class="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 rounded-lg shadow-md transition">
+                                Crear Formulario
+                            </button>
+
+                            <button id="e8_show"
+                                class="bg-teal-800 hover:bg-teal-900 text-white font-semibold py-2 rounded-lg shadow-md transition">
+                                Mostrar Elementos
+                            </button>
+                        </div>
+
+                        <!-- Lugar donde se generará el formulario -->
+                        <div id="e8_form_area" class="p-4 bg-gray-50 border border-gray-200 rounded-lg mb-4"></div>
+
+                        <!-- Resultado -->
+                        <pre id="e8_output"
+                            class="hidden bg-gray-900 text-green-400 p-4 rounded-lg text-sm overflow-auto shadow-inner"></pre>
+
+                        <button onclick="hideExercise()"
+                            class="mt-6 w-full bg-teal-600 text-white py-3 font-semibold rounded-xl shadow hover:bg-teal-700 transition">
+                            ← Volver al Menú
+                        </button>
+
                     </div>
-
-                    <div id="e8_form_area" class="mt-4"></div>
-
-                    <button onclick="hideExercise()" class="mt-6 text-teal-500 font-semibold w-full">← Volver al
-                        Menú</button>
                 </div>
             </div>
 
-            <!-- EJERCICIO 9: Efectos al tomar y perder foco -->
+
+            <!-- EJERCICIO 9: Cambio de color al tomar y perder foco -->
             <div id="ejercicio9" class="exercise-view p-8 rounded-xl shadow-2xl">
                 <div class="max-w-xl mx-auto bg-white p-6 rounded-xl border-t-4 border-cyan-500 shadow-lg">
-                    <h2 class="text-2xl font-bold mb-4 text-cyan-700">9. Evento Focus y Blur</h2>
+                    <h2 class="text-2xl font-bold mb-4 text-cyan-700">9. Cambio de color al enfocar</h2>
 
-                    <input id="e9_text1" type="text" class="w-full border p-2 rounded mb-3" value="Texto 1">
-                    <input id="e9_text2" type="text" class="w-full border p-2 rounded" value="Texto 2">
+                    <div class="space-y-2">
+                        <input type="text" id="texto1" value="Primer texto" class="w-full border p-2 rounded mb-2">
+                        <input type="text" id="texto2" value="Segundo texto" class="w-full border p-2 rounded">
+                    </div>
 
                     <button onclick="hideExercise()" class="mt-6 text-cyan-500 font-semibold w-full">← Volver al
                         Menú</button>
                 </div>
             </div>
 
+
+
+
             <!-- EJERCICIO 10: Contador de caracteres -->
             <div id="ejercicio10" class="exercise-view p-8 rounded-xl shadow-2xl">
                 <div class="max-w-xl mx-auto bg-white p-6 rounded-xl border-t-4 border-emerald-500 shadow-lg">
                     <h2 class="text-2xl font-bold mb-4 text-emerald-700">10. Contador de Caracteres</h2>
 
-                    <textarea id="e10_text" rows="4" class="w-full border rounded p-3 mb-3"></textarea>
-
-                    <p id="e10_count" class="text-gray-700 font-medium">Caracteres restantes: -</p>
+                    <textarea id="campoTexto" maxlength="100" placeholder="Escribe aquí..." rows="4"
+                        class="w-full border rounded p-3 mb-3"></textarea>
+                    <p>Caracteres restantes: <span id="contador">100</span></p>
 
                     <button onclick="hideExercise()" class="mt-6 text-emerald-500 font-semibold w-full">← Volver al
                         Menú</button>
                 </div>
             </div>
-
         </div>
 
     </div>

@@ -1,28 +1,53 @@
-// js/ejercicio8.js
 export function init_ejercicio8() {
-    console.log("Ejercicio 8 listo.");
+    console.log("Ejercicio 8 cargado.");
 
-    $("#e8_create").off("click").on("click", function () {
-        $("#e8_form_area").html(`
-            <form id="dynamic_form" class="space-y-2 p-3 border rounded">
-                <input type="text" id="user" placeholder="Usuario" class="w-full p-2 border rounded">
-                <input type="password" id="pass" placeholder="Clave" class="w-full p-2 border rounded">
+    const $area = $("#e8_form_area");
+    const $output = $("#e8_output");
+
+    // Limpiar listeners
+    $("#e8_create").off("click");
+    $("#e8_show").off("click");
+
+    // ⭐ 1. CREAR FORMULARIO DINÁMICO
+    $("#e8_create").on("click", function () {
+
+        // Evitar duplicación del formulario
+        if ($("#e8_generated_form").length > 0) {
+            alert("El formulario ya fue creado.");
+            return;
+        }
+
+        const formHTML = `
+            <form id="e8_generated_form" class="space-y-4">
+                <div>
+                    <label class="block font-semibold text-gray-700">Nombre de usuario:</label>
+                    <input type="text" class="w-full border rounded p-2 mt-1">
+                </div>
+
+                <div>
+                    <label class="block font-semibold text-gray-700">Clave:</label>
+                    <input type="password" class="w-full border rounded p-2 mt-1">
+                </div>
             </form>
-        `);
+        `;
+
+        $area.hide().html(formHTML).slideDown(300);
+        $output.addClass("hidden").text("");
     });
 
-    $("#e8_show").off("click").on("click", function () {
-        const elementos = $("#dynamic_form").children();
-        let texto = "";
+    // ⭐ 2. MOSTRAR ELEMENTOS HTML DEL FORMULARIO
+    $("#e8_show").on("click", function () {
 
-        elementos.each(function () {
-            texto += `<p>${this.tagName} - id="${this.id}"</p>`;
-        });
+        const form = $("#e8_generated_form");
 
-        $("#e8_form_area").append(`
-            <div class="mt-3 p-2 border bg-gray-100 rounded">
-                ${texto}
-            </div>
-        `);
+        if (form.length === 0) {
+            alert("Primero debes crear el formulario.");
+            return;
+        }
+
+        // Obtener el HTML tal cual fue generado
+        const htmlCode = $("<div>").append(form.clone()).html();
+
+        $output.text(htmlCode).removeClass("hidden").hide().fadeIn(300);
     });
 }
