@@ -278,169 +278,159 @@
 
 
         <!-- SECCIÓN: CATÁLOGO DE EJERCICIOS -->
-        <div id="ejercicios" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2
-                class="text-3xl font-extrabold text-gray-800 mb-8 pt-4 pb-2 border-b-2 border-indigo-200 flex items-center space-x-3">
-                <i class="fas fa-cubes text-indigo-600"></i>
-                <span>Catálogo de Ejercicios jQuery</span>
-            </h2>
+        <!-- Grid de Tarjetas -->
+        <div id="exercise-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
 
-            <!-- Grid de Tarjetas -->
-            <div id="exercise-grid"
-                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12 place-items-center">
+            <!-- E1: Galería de Efectos -->
+            <button onclick="showExercise('ejercicio1')"
+                class="flex items-center p-4 bg-indigo-500 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition duration-300 group text-left w-full">
+                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center mr-4 text-4xl">
+                    <i class="fas fa-images opacity-90 group-hover:opacity-100 transition duration-300"></i>
+                </div>
+                <div class="flex-grow">
+                    <span class="text-xs font-light opacity-80 block">Ej. 01</span>
+                    <h4 class="text-lg font-bold">Galería de Efectos</h4>
+                    <p class="text-sm opacity-90 font-light hidden sm:block">
+                        Aplica animaciones visuales con jQuery (fade, slide, hide/show).
+                    </p>
+                </div>
+            </button>
 
+            <!-- E2: Ocultar/Mostrar Listas -->
+            <button onclick="showExercise('ejercicio2')"
+                class="flex items-center p-4 bg-purple-500 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition duration-300 group text-left w-full">
+                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center mr-4 text-4xl">
+                    <i class="fas fa-eye-slash opacity-90 group-hover:opacity-100 transition duration-300"></i>
+                </div>
+                <div class="flex-grow">
+                    <span class="text-xs font-light opacity-80 block">Ej. 02</span>
+                    <h4 class="text-lg font-bold">Ocultar / Mostrar Listas</h4>
+                    <p class="text-sm opacity-90 font-light hidden sm:block">
+                        Controla la visibilidad de dos listas con botones jQuery.
+                    </p>
+                </div>
+            </button>
 
-                <!-- E1: Galería de Efectos -->
-                <button onclick="showExercise('ejercicio1')"
-                    class="flex items-center p-4 bg-indigo-500 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition duration-300 group text-left">
-                    <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center mr-4 text-4xl">
-                        <i class="fas fa-images opacity-90 group-hover:opacity-100 transition duration-300"></i>
-                    </div>
-                    <div class="flex-grow">
-                        <span class="text-xs font-light opacity-80 block">Ej. 01</span>
-                        <h4 class="text-lg font-bold">Galería de Efectos</h4>
-                        <p class="text-sm opacity-90 font-light hidden sm:block">
-                            Aplica animaciones visuales con jQuery (fade, slide, hide/show).
-                        </p>
-                    </div>
-                </button>
+            <!-- E3: Cambiar Estilos de Títulos -->
+            <button onclick="showExercise('ejercicio3')"
+                class="flex items-center p-4 bg-fuchsia-500 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition duration-300 group text-left w-full">
+                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center mr-4 text-4xl">
+                    <i class="fas fa-heading opacity-90 group-hover:opacity-100 transition duration-300"></i>
+                </div>
+                <div class="flex-grow">
+                    <span class="text-xs font-light opacity-80 block">Ej. 03</span>
+                    <h4 class="text-lg font-bold">Interacción con Títulos</h4>
+                    <p class="text-sm opacity-90 font-light hidden sm:block">
+                        Al presionar un título cambia su color, fondo y tipografía.
+                    </p>
+                </div>
+            </button>
 
-                <!-- E2: Ocultar/Mostrar Listas -->
-                <button onclick="showExercise('ejercicio2')"
-                    class="flex items-center p-4 bg-purple-500 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition duration-300 group text-left">
-                    <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center mr-4 text-4xl">
-                        <i class="fas fa-eye-slash opacity-90 group-hover:opacity-100 transition duration-300"></i>
-                    </div>
-                    <div class="flex-grow">
-                        <span class="text-xs font-light opacity-80 block">Ej. 02</span>
-                        <h4 class="text-lg font-bold">Ocultar / Mostrar Listas</h4>
-                        <p class="text-sm opacity-90 font-light hidden sm:block">
-                            Controla la visibilidad de dos listas con botones jQuery.
-                        </p>
-                    </div>
-                </button>
+            <!-- E4: Eventos de Mouse -->
+            <button onclick="showExercise('ejercicio4')"
+                class="flex items-center p-4 bg-pink-500 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition duration-300 group text-left w-full">
+                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center mr-4 text-4xl">
+                    <i class="fas fa-mouse-pointer opacity-90 group-hover:opacity-100 transition duration-300"></i>
+                </div>
+                <div class="flex-grow">
+                    <span class="text-xs font-light opacity-80 block">Ej. 04</span>
+                    <h4 class="text-lg font-bold">Eventos de Mouse</h4>
+                    <p class="text-sm opacity-90 font-light hidden sm:block">
+                        Cambia el fondo de los enlaces al pasar el cursor sobre ellos.
+                    </p>
+                </div>
+            </button>
 
-                <!-- E3: Cambiar Estilos de Títulos -->
-                <button onclick="showExercise('ejercicio3')"
-                    class="flex items-center p-4 bg-fuchsia-500 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition duration-300 group text-left">
-                    <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center mr-4 text-4xl">
-                        <i class="fas fa-heading opacity-90 group-hover:opacity-100 transition duration-300"></i>
-                    </div>
-                    <div class="flex-grow">
-                        <span class="text-xs font-light opacity-80 block">Ej. 03</span>
-                        <h4 class="text-lg font-bold">Interacción con Títulos</h4>
-                        <p class="text-sm opacity-90 font-light hidden sm:block">
-                            Al presionar un título cambia su color, fondo y tipografía.
-                        </p>
-                    </div>
-                </button>
+            <!-- E5: Manipulación de Listas -->
+            <button onclick="showExercise('ejercicio5')"
+                class="flex items-center p-4 bg-red-500 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition duration-300 group text-left w-full">
+                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center mr-4 text-4xl">
+                    <i class="fas fa-list opacity-90 group-hover:opacity-100 transition duration-300"></i>
+                </div>
+                <div class="flex-grow">
+                    <span class="text-xs font-light opacity-80 block">Ej. 05</span>
+                    <h4 class="text-lg font-bold">Manipulación de Listas</h4>
+                    <p class="text-sm opacity-90 font-light hidden sm:block">
+                        Experimenta con métodos jQuery para agregar, mover o eliminar elementos.
+                    </p>
+                </div>
+            </button>
 
-                <!-- E4: Eventos de Mouse -->
-                <button onclick="showExercise('ejercicio4')"
-                    class="flex items-center p-4 bg-pink-500 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition duration-300 group text-left">
-                    <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center mr-4 text-4xl">
-                        <i class="fas fa-mouse-pointer opacity-90 group-hover:opacity-100 transition duration-300"></i>
-                    </div>
-                    <div class="flex-grow">
-                        <span class="text-xs font-light opacity-80 block">Ej. 04</span>
-                        <h4 class="text-lg font-bold">Eventos de Mouse</h4>
-                        <p class="text-sm opacity-90 font-light hidden sm:block">
-                            Cambia el fondo de los enlaces al pasar el cursor sobre ellos.
-                        </p>
-                    </div>
-                </button>
+            <!-- E6: Resaltado OOP -->
+            <button onclick="showExercise('ejercicio6')"
+                class="flex items-center p-4 bg-amber-500 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition duration-300 group text-left w-full">
+                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center mr-4 text-4xl">
+                    <i class="fas fa-highlighter opacity-90 group-hover:opacity-100 transition duration-300"></i>
+                </div>
+                <div class="flex-grow">
+                    <span class="text-xs font-light opacity-80 block">Ej. 06</span>
+                    <h4 class="text-lg font-bold">Resaltado de Lenguajes OOP</h4>
+                    <p class="text-sm opacity-90 font-light hidden sm:block">
+                        Destaca elementos con clase especial mediante un botón.
+                    </p>
+                </div>
+            </button>
 
-                <!-- E5: Manipulación de Listas -->
-                <button onclick="showExercise('ejercicio5')"
-                    class="flex items-center p-4 bg-red-500 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition duration-300 group text-left">
-                    <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center mr-4 text-4xl">
-                        <i class="fas fa-list opacity-90 group-hover:opacity-100 transition duration-300"></i>
-                    </div>
-                    <div class="flex-grow">
-                        <span class="text-xs font-light opacity-80 block">Ej. 05</span>
-                        <h4 class="text-lg font-bold">Manipulación de Listas</h4>
-                        <p class="text-sm opacity-90 font-light hidden sm:block">
-                            Experimenta con métodos jQuery para agregar, mover o eliminar elementos.
-                        </p>
-                    </div>
-                </button>
+            <!-- E7: Asociar / Desasociar Clase -->
+            <button onclick="showExercise('ejercicio7')"
+                class="flex items-center p-4 bg-yellow-500 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition duration-300 group text-left w-full">
+                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center mr-4 text-4xl">
+                    <i class="fas fa-exchange-alt opacity-90 group-hover:opacity-100 transition duration-300"></i>
+                </div>
+                <div class="flex-grow">
+                    <span class="text-xs font-light opacity-80 block">Ej. 07</span>
+                    <h4 class="text-lg font-bold">Asociar / Desasociar Clase</h4>
+                    <p class="text-sm opacity-90 font-light hidden sm:block">
+                        Añade o remueve clases CSS dinámicamente con botones.
+                    </p>
+                </div>
+            </button>
 
-                <!-- E6: Resaltado OOP -->
-                <button onclick="showExercise('ejercicio6')"
-                    class="flex items-center p-4 bg-amber-500 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition duration-300 group text-left">
-                    <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center mr-4 text-4xl">
-                        <i class="fas fa-highlighter opacity-90 group-hover:opacity-100 transition duration-300"></i>
-                    </div>
-                    <div class="flex-grow">
-                        <span class="text-xs font-light opacity-80 block">Ej. 06</span>
-                        <h4 class="text-lg font-bold">Resaltado de Lenguajes OOP</h4>
-                        <p class="text-sm opacity-90 font-light hidden sm:block">
-                            Destaca elementos con clase especial mediante un botón.
-                        </p>
-                    </div>
-                </button>
+            <!-- E8: Formulario Dinámico -->
+            <button onclick="showExercise('ejercicio8')"
+                class="flex items-center p-4 bg-lime-500 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition duration-300 group text-left w-full">
+                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center mr-4 text-4xl">
+                    <i class="fas fa-user-lock opacity-90 group-hover:opacity-100 transition duration-300"></i>
+                </div>
+                <div class="flex-grow">
+                    <span class="text-xs font-light opacity-80 block">Ej. 08</span>
+                    <h4 class="text-lg font-bold">Formulario Dinámico</h4>
+                    <p class="text-sm opacity-90 font-light hidden sm:block">
+                        Crea y muestra formularios en tiempo real mediante jQuery.
+                    </p>
+                </div>
+            </button>
 
-                <!-- E7: Asociar / Desasociar Clase -->
-                <button onclick="showExercise('ejercicio7')"
-                    class="flex items-center p-4 bg-yellow-500 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition duration-300 group text-left">
-                    <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center mr-4 text-4xl">
-                        <i class="fas fa-exchange-alt opacity-90 group-hover:opacity-100 transition duration-300"></i>
-                    </div>
-                    <div class="flex-grow">
-                        <span class="text-xs font-light opacity-80 block">Ej. 07</span>
-                        <h4 class="text-lg font-bold">Asociar / Desasociar Clase</h4>
-                        <p class="text-sm opacity-90 font-light hidden sm:block">
-                            Añade o remueve clases CSS dinámicamente con botones.
-                        </p>
-                    </div>
-                </button>
+            <!-- E9: Campos con Foco -->
+            <button onclick="showExercise('ejercicio9')"
+                class="flex items-center p-4 bg-emerald-500 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition duration-300 group text-left w-full">
+                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center mr-4 text-4xl">
+                    <i class="fas fa-i-cursor opacity-90 group-hover:opacity-100 transition duration-300"></i>
+                </div>
+                <div class="flex-grow">
+                    <span class="text-xs font-light opacity-80 block">Ej. 09</span>
+                    <h4 class="text-lg font-bold">Campos con Foco</h4>
+                    <p class="text-sm opacity-90 font-light hidden sm:block">
+                        Cambia el color del texto según el estado de foco del input.
+                    </p>
+                </div>
+            </button>
 
-                <!-- E8: Formulario Dinámico -->
-                <button onclick="showExercise('ejercicio8')"
-                    class="flex items-center p-4 bg-lime-500 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition duration-300 group text-left">
-                    <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center mr-4 text-4xl">
-                        <i class="fas fa-user-lock opacity-90 group-hover:opacity-100 transition duration-300"></i>
-                    </div>
-                    <div class="flex-grow">
-                        <span class="text-xs font-light opacity-80 block">Ej. 08</span>
-                        <h4 class="text-lg font-bold">Formulario Dinámico</h4>
-                        <p class="text-sm opacity-90 font-light hidden sm:block">
-                            Crea y muestra formularios en tiempo real mediante jQuery.
-                        </p>
-                    </div>
-                </button>
+            <!-- E10: Contador de Caracteres -->
+            <button onclick="showExercise('ejercicio10')" class="flex items-center p-4 bg-cyan-500 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition duration-300 group text-left w-full
+               md:col-span-3 md:max-w-md mx-auto">
+                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center mr-4 text-4xl">
+                    <i class="fas fa-keyboard opacity-90 group-hover:opacity-100 transition duration-300"></i>
+                </div>
+                <div class="flex-grow">
+                    <span class="text-xs font-light opacity-80 block">Ej. 10</span>
+                    <h4 class="text-lg font-bold">Contador de Caracteres</h4>
+                    <p class="text-sm opacity-90 font-light hidden sm:block">
+                        Muestra en tiempo real los caracteres restantes de un campo de texto.
+                    </p>
+                </div>
+            </button>
 
-                <!-- E9: Campos con Foco -->
-                <button onclick="showExercise('ejercicio9')"
-                    class="flex items-center p-4 bg-emerald-500 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition duration-300 group text-left">
-                    <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center mr-4 text-4xl">
-                        <i class="fas fa-i-cursor opacity-90 group-hover:opacity-100 transition duration-300"></i>
-                    </div>
-                    <div class="flex-grow">
-                        <span class="text-xs font-light opacity-80 block">Ej. 09</span>
-                        <h4 class="text-lg font-bold">Campos con Foco</h4>
-                        <p class="text-sm opacity-90 font-light hidden sm:block">
-                            Cambia el color del texto según el estado de foco del input.
-                        </p>
-                    </div>
-                </button>
-
-                <!-- E10: Contador de Caracteres -->
-                <button onclick="showExercise('ejercicio10')"
-                    class="flex items-center p-4 bg-cyan-500 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition duration-300 group text-left">
-                    <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center mr-4 text-4xl">
-                        <i class="fas fa-keyboard opacity-90 group-hover:opacity-100 transition duration-300"></i>
-                    </div>
-                    <div class="flex-grow">
-                        <span class="text-xs font-light opacity-80 block">Ej. 10</span>
-                        <h4 class="text-lg font-bold">Contador de Caracteres</h4>
-                        <p class="text-sm opacity-90 font-light hidden sm:block">
-                            Muestra en tiempo real los caracteres restantes de un campo de texto.
-                        </p>
-                    </div>
-                </button>
-
-            </div>
         </div>
         <!-- Fin Catálogo -->
 
@@ -448,12 +438,12 @@
         <div id="exercise-views-container">
 
             <!-- EJERCICIO 1: Galería de efectos jQuery -->
-            <div class="max-w-4xl mx-auto">
+            <div id="ejercicio1" class="exercise-view p-8 rounded-2xl shadow-2xl bg-white">
                 <h1 class="text-3xl font-extrabold text-gray-800 mb-6 border-b-4 border-indigo-500 pb-2">
                     <i class="fas fa-magic text-indigo-500 mr-2"></i> Ejercicio 01: Galería de Efectos jQuery
                 </h1>
 
-                <div id="ejercicio1" class="exercise-view p-8 rounded-xl shadow-2xl bg-white">
+                <div class="p-8 rounded-xl shadow-2xl bg-white">
                     <div class="max-w-xl mx-auto p-6 rounded-xl shadow-lg border-t-4 border-indigo-500">
 
                         <h2 class="text-2xl font-bold mb-4 text-indigo-700">
@@ -634,13 +624,16 @@
 
             </div>
 
-            <div class="max-w-4xl mx-auto">
-                <h1 class="text-3xl font-extrabold text-gray-800 mb-6 border-b-4 border-pink-500 pb-2">
-                    <i class="fas fa-mouse-pointer text-pink-500 mr-2"></i> Ejercicio 04: Eventos de Mouse
-                </h1>
+            <div id="ejercicio4" class="exercise-view p-8 rounded-2xl shadow-2xl bg-white">
+                <div class="max-w-4xl mx-auto">
 
-                <div id="ejercicio4" class="exercise-view p-8 bg-white rounded-2xl shadow-2xl">
-                    <div class="max-w-xl mx-auto p-6 rounded-xl shadow-lg border-t-4 border-pink-500">
+                    <h1
+                        class="text-3xl font-extrabold text-gray-800 mb-6 border-b-4 border-pink-500 pb-2 flex items-center gap-2">
+                        <i class="fas fa-mouse-pointer text-pink-500"></i> Ejercicio 04: Eventos de Mouse
+                    </h1>
+
+                    <!-- Contenedor principal -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg mb-8 border-t-4 border-pink-500">
 
                         <h2 class="text-2xl font-bold mb-4 text-pink-700">4. Efecto Hover en Hipervínculos</h2>
 
@@ -650,40 +643,46 @@
 
                         <!-- HIPERVÍNCULOS -->
                         <div class="space-y-3">
-                            <a href="#" class="block p-3 rounded-lg text-blue-600 font-semibold border e4_link">
+                            <a href="#"
+                                class="block p-3 rounded-lg text-blue-600 font-semibold border e4_link hover:bg-pink-50 transition-colors duration-200">
                                 Hipervínculo 1
                             </a>
 
-                            <a href="#" class="block p-3 rounded-lg text-blue-600 font-semibold border e4_link">
+                            <a href="#"
+                                class="block p-3 rounded-lg text-blue-600 font-semibold border e4_link hover:bg-pink-50 transition-colors duration-200">
                                 Hipervínculo 2
                             </a>
 
-                            <a href="#" class="block p-3 rounded-lg text-blue-600 font-semibold border e4_link">
+                            <a href="#"
+                                class="block p-3 rounded-lg text-blue-600 font-semibold border e4_link hover:bg-pink-50 transition-colors duration-200">
                                 Hipervínculo 3
                             </a>
                         </div>
 
+                    </div>
+
+                    <!-- Botón Volver -->
+                    <div class="flex justify-center mt-6">
                         <button onclick="hideExercise()"
-                            class="mt-8 w-full text-pink-600 font-semibold hover:underline">
+                            class="bg-pink-500 text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-pink-600 hover:scale-105 transition-transform duration-200">
                             ← Volver al Menú
                         </button>
-
                     </div>
+
                 </div>
             </div>
 
             <!-- EJERCICIO 5: Manipulación de listas -->
-            <div class="max-w-4xl mx-auto px-4 py-8">
+            <div id="ejercicio5" class="exercise-view p-8 rounded-2xl shadow-2xl bg-white">
+                <div class="max-w-4xl mx-auto px-4 py-8">
 
-                <h1
-                    class="text-3xl font-extrabold text-gray-800 mb-6 border-b-4 border-yellow-500 pb-3 flex items-center gap-3">
-                    <i class="fas fa-list text-yellow-500"></i> Ejercicio 05: Manipulación de Listas con jQuery
-                </h1>
+                    <h1
+                        class="text-3xl font-extrabold text-gray-800 mb-6 border-b-4 border-yellow-500 pb-3 flex items-center gap-3">
+                        <i class="fas fa-list text-yellow-500"></i> Ejercicio 05: Manipulación de Listas con jQuery
+                    </h1>
 
-                <div id="ejercicio5"
-                    class="exercise-view p-8 bg-gradient-to-br from-yellow-50 to-white rounded-2xl shadow-2xl">
-
-                    <div class="max-w-xl mx-auto p-6 rounded-xl shadow-lg border-t-4 border-yellow-500 bg-white">
+                    <!-- Contenedor principal -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-yellow-500">
 
                         <h2 class="text-2xl font-bold mb-4 text-yellow-700 flex items-center gap-2">
                             <i class="fas fa-list-ol"></i> 5. Manipulación de una lista (jQuery)
@@ -741,16 +740,18 @@
 
                         </div>
 
-                        <!-- BOTÓN VOLVER -->
+                    </div>
+
+                    <!-- Botón Volver -->
+                    <div class="flex justify-center mt-6">
                         <button onclick="hideExercise()"
-                            class="mt-8 w-full text-yellow-600 font-semibold hover:underline hover:text-yellow-700 transition-colors">
+                            class="bg-yellow-500 text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-yellow-600 hover:scale-105 transition-transform duration-200">
                             ← Volver al Menú
                         </button>
-
                     </div>
+
                 </div>
             </div>
-
 
 
             <!-- EJERCICIO 6: Resaltar lenguajes OOP -->
@@ -809,16 +810,20 @@
                 </div>
             </div>
 
-            <div class="max-w-4xl mx-auto">
-                <h1 class="text-3xl font-extrabold text-gray-800 mb-6 border-b-4 border-teal-500 pb-2">
-                    <i class="fas fa-user-plus text-teal-500 mr-2"></i> Ejercicio 08: Formulario Dinámico
-                </h1>
 
-                <div id="ejercicio8" class="exercise-view p-8 bg-white rounded-2xl shadow-2xl">
-                    <div class="max-w-xl mx-auto p-6 rounded-xl shadow-lg border-t-4 border-teal-500">
+            <div id="ejercicio8" class="exercise-view p-8 rounded-2xl shadow-2xl bg-white">
+                <div class="max-w-4xl mx-auto px-4 py-8">
 
-                        <h2 class="text-2xl font-bold mb-3 text-teal-700">
-                            8. Crear y Mostrar Formulario
+                    <h1
+                        class="text-3xl font-extrabold text-gray-800 mb-6 border-b-4 border-teal-500 pb-3 flex items-center gap-3">
+                        <i class="fas fa-user-plus text-teal-500"></i> Ejercicio 08: Formulario Dinámico
+                    </h1>
+
+                    <!-- Contenedor principal -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-teal-500">
+
+                        <h2 class="text-2xl font-bold mb-3 text-teal-700 flex items-center gap-2">
+                            <i class="fas fa-edit"></i> 8. Crear y Mostrar Formulario
                         </h2>
 
                         <p class="text-gray-600 mb-6">
@@ -829,13 +834,13 @@
                         <!-- BOTONES -->
                         <div class="grid grid-cols-2 gap-4 mb-6">
                             <button id="e8_create"
-                                class="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 rounded-lg shadow-md transition">
-                                Crear Formulario
+                                class="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 rounded-lg shadow-md flex items-center justify-center gap-2 transition-transform transform hover:scale-105">
+                                <i class="fas fa-plus"></i> Crear Formulario
                             </button>
 
                             <button id="e8_show"
-                                class="bg-teal-800 hover:bg-teal-900 text-white font-semibold py-2 rounded-lg shadow-md transition">
-                                Mostrar Elementos
+                                class="bg-teal-800 hover:bg-teal-900 text-white font-semibold py-2 rounded-lg shadow-md flex items-center justify-center gap-2 transition-transform transform hover:scale-105">
+                                <i class="fas fa-eye"></i> Mostrar Elementos
                             </button>
                         </div>
 
@@ -846,12 +851,16 @@
                         <pre id="e8_output"
                             class="hidden bg-gray-900 text-green-400 p-4 rounded-lg text-sm overflow-auto shadow-inner"></pre>
 
+                    </div>
+
+                    <!-- Botón Volver -->
+                    <div class="flex justify-center mt-6">
                         <button onclick="hideExercise()"
-                            class="mt-6 w-full bg-teal-600 text-white py-3 font-semibold rounded-xl shadow hover:bg-teal-700 transition">
+                            class="bg-teal-500 text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-teal-600 hover:scale-105 transition-transform duration-200">
                             ← Volver al Menú
                         </button>
-
                     </div>
+
                 </div>
             </div>
 
